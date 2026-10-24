@@ -1,0 +1,11 @@
+services:
+  watermark-studio:
+    build: .
+    container_name: watermark-studio
+    ports:
+      - "127.0.0.1:8080:8080"
+    restart: unless-stopped
+    # Image bytes are processed in memory; no persistent volume is required.
+    # Keep this bound to localhost unless you intentionally configure remote access.
+    mem_limit: 768m
+    cpus: 2.0
